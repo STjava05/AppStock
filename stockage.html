@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<title>List Stockage</title>
+</head>
+<body>
+<h2>Stock Articoli</h2>
+
+<form action="#" method="post" th:action="@{/}" th:object="${stockage}">
+
+<input type="text" th:field="*{articolo}" placeholder="articolo"/><br><br>
+<input type="text" th:field="*{quantita}" placeholder="quantita"/><br><br>
+<input type="text" th:field="*{prezzoUnitario}" placeholder="prezzoUnitario"/><br><br>
+<input type="text" th:field="*{prezzoTotale}" placeholder="prezzoTotale"/><br><br>
+
+<input type="submit" value="salva"/><br><br>
+
+</form>
+
+<ul th:each="stockage : ${listStockage}">
+
+<li><h4 th:text="${stockage.articolo}"></h4>
+<p th:text="${stockage.quantita}">
+<p th:text="${stockage.prezzoUnitario}">
+<p th:text="${stockage.prezzoTotale}">
+
+</li>
+</ul>
+</body>
+</html>
